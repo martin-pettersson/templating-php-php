@@ -19,13 +19,4 @@ use RuntimeException;
  */
 class TemplateNotFoundException extends RuntimeException implements TemplateNotFoundExceptionInterface
 {
-    /**
-     * Create a new exception instance.
-     *
-     * @param string $template Concerned template.
-     */
-    public function __construct(string $template)
-    {
-        parent::__construct("Template file not found for template: {$template}");
-    }
 }

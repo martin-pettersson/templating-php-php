@@ -1,0 +1,50 @@
+{
+    "name": "n7e/templating-php",
+    "description": "A PHP-template implementation of the templating abstraction.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin Pettersson",
+            "email": "martin@n7e.se"
+        }
+    ],
+    "minimum-stability": "stable",
+    "scripts": {
+        "lint": "phpcs -p --standard=PSR12 src/",
+        "analyze": [
+            "phpmd --suffixes php src/ text phpmd.xml",
+            "phpstan analyze --configuration phpstan.neon",
+            "phpinsights --no-interaction",
+            "pdepend --quiet --jdepend-chart=jdepend.svg --overview-pyramid=pyramid.svg src/"
+        ],
+        "test": "phpunit --coverage-filter src"
+    },
+    "autoload": {
+        "psr-4": {
+            "N7e\\Templating\\Php\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "N7e\\Templating\\Php\\": "test/"
+        }
+    },
+    "require": {
+        "php": ">=8.3",
+        "n7e/templating": "^0.1.0"
+    },
+    "require-dev": {
+        "nunomaduro/phpinsights": "^v2.12.0",
+        "pdepend/pdepend": "^2.16.2",
+        "phpmd/phpmd": "^2.15.0",
+        "phpstan/phpstan": "^2.1.2",
+        "phpunit/phpunit": "^11.5.3",
+        "squizlabs/php_codesniffer": "^3.11.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

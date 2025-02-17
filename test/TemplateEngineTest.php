@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
 #[CoversClass(TemplateNotFoundException::class)]
 class TemplateEngineTest extends TestCase
 {
-    private array $templateDirectories = [
+    private static array $templateDirectories = [
         __DIR__ . '/fixtures/templates'
     ];
 
@@ -30,7 +30,7 @@ class TemplateEngineTest extends TestCase
     #[Before]
     public function setUp(): void
     {
-        $this->templateEngine = new TemplateEngine($this->templateDirectories);
+        $this->templateEngine = new TemplateEngine(TemplateEngineTest::$templateDirectories);
     }
 
     #[Test]

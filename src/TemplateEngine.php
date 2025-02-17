@@ -23,7 +23,7 @@ class TemplateEngine implements TemplateEngineInterface
      *
      * @var string[]
      */
-    private array $templateDirectories;
+    private readonly array $templateDirectories;
 
     /**
      * Create a new template engine instance.
